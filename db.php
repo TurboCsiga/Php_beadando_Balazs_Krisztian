@@ -1,3 +1,3 @@
 <?php
-$db = new PDO("mysql:dbname=japan;host=localhost;charset=utf8mb4,"root,"");
+$db = new PDO("mysql:dbname=auto;host=localhost","root","");
 ?>
