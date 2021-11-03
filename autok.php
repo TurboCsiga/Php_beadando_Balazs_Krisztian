@@ -76,8 +76,17 @@ class Japan {
       }
 
 
+      public function ujAuto() {
+           global $db;
 
-}
-
-
+           $db->prepare('INSERT INTO japan (marka, tipus, kialakitas, teljesitmeny, motor, megjelenes)
+                         VALUES (:marka, :tipus, :kialakitas, :teljesitmeny, :motor, :megjelenes)')
+               ->execute([':marka' => $this -> marka,
+                           ':tipus' => $this -> tipus,
+                           ':kialakitas' => $this -> kialakitas,
+                           ':teljesitmeny' => $this -> teljesitmeny,
+                           ':motor' => $this -> motor,
+                           ':megjelenes' => $this -> megjelenes -> format('Y-m-d')]);
+                         }
+      }
 ?>
