@@ -19,6 +19,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
     <title>Running in the 90'-s,</title>
   </head>
   <body>
@@ -31,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
           echo " " . $kiir -> getTipus();
           echo "</h2>";
           echo "<p>Kialakítás: " . $kiir -> getKialakitas() . "</p>";
-          echo "<p>Teljesítmény: " . $kiir -> getTeljesitmeny() . "</p>";
+          echo "<p>Teljesítmény: " . $kiir -> getTeljesitmeny() . " lóerő</p>";
           echo "<p>Motor: " . $kiir -> getMotor() . "</p>";
           echo "<p>Megjelenési: " . $kiir -> getMegjelenes() ->format('Y-m-d') . "</p>";
 

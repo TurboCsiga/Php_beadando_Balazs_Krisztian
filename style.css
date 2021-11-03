@@ -1,0 +1,21 @@
+body{
+  background-color: rgb(17, 117, 150);
+  -webkit-text-stroke: 0.001vw rgb(0,190,255);
+  font-size: 1.5vw;
+}
+a:link {
+  color: rgb(190,190,190);
+  text-decoration: none;
+}
+a:visited {
+  color: rgb(190,190,190);
+  text-decoration: none;
+}
+button{
+  background-color: rgb(50, 50, 50);
+  color: rgb(190,190,190);
+}
+input{
+  background-color: rgb(50, 50, 50);
+  color: rgb(190,190,190);
+}
