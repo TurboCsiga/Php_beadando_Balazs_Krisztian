@@ -38,32 +38,32 @@ $kocsiId = $_GET['id'] ?? NULL;
                   </div>
                    <div>
                      <label>
-                       <input type="text" name="marka" placeholder="Márka">
+                       <input type="text" name="marka" placeholder="Márka" required>
                      </label>
                    </div>
                    <div>
                      <label>
-                       <input type="text" name="tipus" placeholder="Típus">
+                       <input type="text" name="tipus" placeholder="Típus" required>
                      </label>
                    </div>
                    <div>
                      <label>
-                       <input type="text" name="kialakitas" placeholder="Kialakítás">
+                       <input type="text" name="kialakitas" placeholder="Kialakítás" required>
                      </label>
                    </div>
                    <div>
                      <label>
-                       <input type="number" name="teljesitmeny" placeholder="Teljesítmény"> <span>(lóerő)</span>
+                       <input type="number" name="teljesitmeny" placeholder="Teljesítmény" required> <span>(lóerő)</span>
                      </label>
                    </div>
                    <div>
                      <label>
-                       <input type="text" name="motor" placeholder="Motor">
+                       <input type="text" name="motor" placeholder="Motor" required>
                      </label>
                    </div>
                    <div>
                      <label>
-                       <input type="date" name="megjelenes"> <span>Megjelenési dátum</span>
+                       <input type="date" name="megjelenes" required> <span>Megjelenési dátum</span>
                      </label>
                    </div>
 
