@@ -7,10 +7,10 @@ $kocsi = Japan::osszes();
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $deleteId = $_POST['deleteId'] ?? '';
 
-  /*if ($deleteId !== '') {
+  if ($deleteId !== '') {
     Japan::kocsiTorol($deleteId);
     header('Location: index.php');
-  }*/
+  }
 }
 
 ?><!DOCTYPE html>
@@ -27,20 +27,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     foreach ($kocsi as $kiir) {
           echo "<div>";
           echo "<h2>";
-          echo "Márka: " . $kiir -> getMarka();
-          echo " Típus: " . $kiir -> getTipus();
+          echo $kiir -> getMarka();
+          echo " " . $kiir -> getTipus();
           echo "</h2>";
           echo "<p>Kialakítás: " . $kiir -> getKialakitas() . "</p>";
           echo "<p>Teljesítmény: " . $kiir -> getTeljesitmeny() . "</p>";
           echo "<p>Motor: " . $kiir -> getMotor() . "</p>";
           echo "<p>Megjelenési: " . $kiir -> getMegjelenes() ->format('Y-m-d') . "</p>";
 
-        /*  echo "<form method='POST'>";
+          echo "<form method='POST'>";
           echo "<input type='hidden' name='deleteId' value='" . $kiir -> getId() . "'>";
           echo "<button type='submit'>Törlés</button>";
+          echo "<button><a href='kocsiMod.php?id=" . $kiir->getId() . "'>Szerkeszt</a></button>";
           echo "</form>";
-          /*
-          echo "<a href='editBlogPost.php?id=" . $kiir->getId() . "'>Szerkeszt</a>";*/
           echo "</div>";
         }
 
@@ -57,8 +56,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       <div class="container">
         <button><a href='ujkocsi.php'>Új autó hozzáadása</a></button>
       </div>
-      <div class="container">
-        <button><a href='kocsiMod.php'>Meglévő autók módosítása</a></button>
-      </div>
+
   </body>
 </html>

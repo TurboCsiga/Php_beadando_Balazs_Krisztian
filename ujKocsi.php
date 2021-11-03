@@ -29,6 +29,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <body>
     <div class="container">
            <form method="post">
+                  <div>
+                    <label>
+                      <h1>Új autó hozzáadása:</h1>
+                    </label>
+                  </div>
                    <div>
                      <label>
                        <input type="text" name="marka" placeholder="Márka">

@@ -9,7 +9,8 @@ class Japan {
   private $motor;
   private $megjelenes;
 
-  public function __construct(string $marka, string $tipus,string $kialakitas,int $teljesitmeny, string $motor, DateTime $megjelenes) {
+  public function __construct(string $marka, string $tipus,string $kialakitas,
+                              int $teljesitmeny, string $motor, DateTime $megjelenes) {
         $this->marka = $marka;
         $this->tipus = $tipus;
         $this->kialakitas = $kialakitas;
@@ -18,6 +19,11 @@ class Japan {
         $this->megjelenes = $megjelenes;
     }
 
+
+
+    public function getId() : int {
+        return $this->id;
+    }
 
     public function getMarka() : string {
         return $this->marka;
@@ -88,5 +94,22 @@ class Japan {
                            ':motor' => $this -> motor,
                            ':megjelenes' => $this -> megjelenes -> format('Y-m-d')]);
                          }
-      }
+
+      public static function kocsiTorol(int $id) {
+           global $db;
+                  $db->prepare('DELETE FROM japan WHERE id = :id')
+        ->execute([':id' => $id]);
+            }
+
+      public static function kocsiMod(int $kocsiId, string $kocsiMarka, string $kocsiTipus, string $kocsikialakitas, int $kocsiTeljesitmeny, string $kocsiMotor, DateTime $kocsiMegjelenes) {
+          global $db;
+
+          $db -> prepare('UPDATE japan SET marka = :marka, tipus = :tipus, kialakitas = :kialakitas,
+                                          teljesitmeny = :teljesitmeny, motor = :motor,
+                                          megjelenes = :megjelenes WHERE id = :id ')
+              -> execute([':marka' => $kocsiMarka, ':tipus' => $kocsiTipus, ':kialakitas' => $kocsikialakitas,
+                          ':teljesitmeny' => $kocsiTeljesitmeny, ':motor' => $kocsiMotor, ':megjelenes' => $kocsiMegjelenes -> format('Y-m-d'), ':id' => $kocsiId]);
+
+    }
+    }
 ?>
